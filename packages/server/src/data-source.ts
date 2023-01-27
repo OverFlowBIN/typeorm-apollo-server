@@ -4,6 +4,7 @@ import { Product, User } from '../src/entities';
 
 dotenv.config({ path: '.env' });
 const { POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD } = process.env;
+console.log( process.env)
 
 const PostgresDataSource = new DataSource({
   type: 'postgres',

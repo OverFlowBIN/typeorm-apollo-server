@@ -1,22 +1,28 @@
 import { Field, ID, ObjectType } from 'type-graphql';
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity()
 @ObjectType()
-export default class Product {
+export default class Product extends BaseEntity {
+  @PrimaryGeneratedColumn('uuid')
   @Field(() => ID)
-  id: number;
+  id: string;
 
+  @Column({ length: '50' })
   @Field(() => String)
   category: string;
 
+  @Column({ length: '50' })
   @Field(() => String)
   name: string;
 
-  @Field(() => String)
+  @Field(() => Number)
   price: number;
 
-  @Field(() => String)
+  @Field(() => Number)
   quantity: number;
 
+  @Column({ length: '50', nullable: true })
   @Field(() => String, { nullable: true })
   origin: string;
 }

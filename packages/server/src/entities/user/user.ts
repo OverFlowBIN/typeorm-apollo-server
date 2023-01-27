@@ -11,10 +11,10 @@ import { BaseEntity, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity() 
 @ObjectType()
-export default class User {
+export default class User extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   @Field(() => ID)
-  id: number;
+  id: string;
 
   @Column({ length: '255' })
   @Field(() => String)
