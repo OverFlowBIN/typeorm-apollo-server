@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      // typeorm, typegraphql을 원할하게 사용하게 해주는 최소 옵션
+      "esModuleInterop": true,
+      "removeComments": true,
+      "lib": ["es2018", "esnext.asynciterable"],
+      "target": "es2018",
+      
+      "module": "commonjs",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "outDir": "./dist",
+      "sourceMap": true,
+      "isolatedModules": true
+    },
+    "exclude": [
+      "node_modules"
+    ],
+    "include": [
+      "packages/server/src"
+    ]
+  }

@@ -1,0 +1,13 @@
+{
+  "name": "typeorm-apollo-server-example",
+  "version": "0.1.0",
+  "packageManager": "yarn@3.3.1",
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "scripts": {
+    "server": "yarn workspace @typeorm-apollo-server-example/server"
+  }
+}
