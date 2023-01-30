@@ -18,12 +18,12 @@ const createSchema = () =>
 
 const startApolloServer = async () => {
   await PostgresDataSource.initialize(); // DataSource 초기화
-  console.log('1')
+  
   const schema = await createSchema();
-  console.log('2')
+  
   const app = express();
   const httpServer = http.createServer(app);
-  console.log('3')
+  
   const server = new ApolloServer({
     schema,
     csrfPrevention: true,
@@ -33,10 +33,10 @@ const startApolloServer = async () => {
       ApolloServerPluginLandingPageLocalDefault({ embed: true }),
     ],
   });
-  console.log('4')
+  
   await server.start();
   server.applyMiddleware({ app });
-  console.log('5')
+  
   httpServer.listen(4000, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));
 };
 
